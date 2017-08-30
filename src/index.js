@@ -34,8 +34,9 @@ class Home extends React.Component {
   }
 
   search() {
-    fetch('/api/collection/artists')
+    fetch(`/api/collection/artists/?page=2`)
       .then(res => res.json())
+      .catch(e => e)
       .then(artists => this.setState({ artists }));
   }
 }
