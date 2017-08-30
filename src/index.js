@@ -1,7 +1,5 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import Request  from 'superagent';
-import _        from 'lodash';
 
 import './index.css';
 
