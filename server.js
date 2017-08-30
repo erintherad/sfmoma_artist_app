@@ -1,18 +1,23 @@
 var express = require('express');
 var app = express();
-
-// Allows app to use external js files
-app.use(express.static('public'));
+var router = express.Router();
+var request = require('request');
 
 app.get('/api/*', function(req, res) {
-  console.log('got request');
+  var options = {
+    url: 'https://www.sfmoma.org' + req.url,
+    headers: {
+      'Authorization': 'Token 53a64b5ecfc68a27eef8668d33322a09897f1bfe'
+    }
+  };
+
+  request(options, function (error, response, body) {
+    res.json(JSON.parse(body).results);
+  });
 });
 
-var server = app.listen(3000, function () {
-
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Example app listening at http://%s:%s', host, port);
-
+app.listen(3000, function () {
+  console.log('Example app listening at http://localhost:3000');
 });
+
+module.exports = router;
