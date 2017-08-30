@@ -4,6 +4,8 @@ import _ from 'lodash';
 
 import './index.css';
 
+// var slugify = require('slugify');
+
 class Home extends React.Component {
 
   constructor() {
