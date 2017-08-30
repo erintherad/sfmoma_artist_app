@@ -8,3 +8,14 @@ body {
   height: 200px;
   width: 200px;
 }
+
+.card {
+  height: 400px;
+  width: 400px;
+  padding: 0px 10px;
+}
+
+.card h4 {
+  width: 200px;
+  margin: 0 auto;
+}

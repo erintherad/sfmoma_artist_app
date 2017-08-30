@@ -26,9 +26,9 @@ class Home extends React.Component {
                 <div className="card">
                   <div className="card-block">
                     <img className="card-img-top img-fluid" src={ imgUrl } alt="" />
-                    <h4 className="card-title">{ artwork.artists[0].artist.name_display }</h4>
-                    <p className="card-text">Collection { artwork.collection }</p>
-                    <p className="card-text">Type { artwork.type }</p>
+                    <h4 className="card-title">{ artwork.title.display }</h4>
+                    <p className="card-text">{ artwork.artists[0].artist.name_display }</p>
+                    <p className="card-text">{ artwork.type }, { artwork.date.display }</p>
                   </div>
                 </div>
               </div>;
@@ -39,7 +39,7 @@ class Home extends React.Component {
         <div className="col-md-12 text-center">
           <h1>artworks</h1>
           <input ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
-            <div className="card-columns">{ artworks }</div>
+            <div className="card-deck">{ artworks }</div>
         </div>
       </div>
     );
