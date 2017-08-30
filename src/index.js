@@ -1,5 +1,6 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash';
 
 import './index.css';
 
@@ -13,42 +14,28 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
-    // this.search();
-    fetch('/api/collection/artists/')
-      .then(res => res.json())
-      .then(artists => this.setState({ artists }));
+    this.search();
   }
 
   render() {
-    // var artists = _.map(this.state.artists, (artist) => {
-    //   return <li key={ artist.id }>{ artist.name }</li>;
-    // })
-    // return (
-    //   <div>
-    //   <h1>Artist Search</h1>
-    //     <input ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
-    //     <ul>{ artists }</ul>
-    //   </div>
-    // );
+    var artists = _.map(this.state.artists, (artist) => {
+      return <li key={ artist.slug }>{ artist.name.display }</li>;
+    })
+
     return (
       <div className="App">
         <h1>Artists</h1>
-        {this.state.artists.map(artist =>
-          <div key={artist.slug}>{artist.name.display}</div>
-        )}
+        <input ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
+        <ul>{ artists }</ul>
       </div>
     );
   }
 
-  // search(artist = "Arthur_Dove") {
-  //   var url = `/api/collection/artists/${artist}`;
-  //   Request.get(url).then((response) => {
-  //     console.log(response);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-  // }
+  search() {
+    fetch('/api/collection/artists')
+      .then(res => res.json())
+      .then(artists => this.setState({ artists }));
+  }
 }
 
 ReactDOM.render(
