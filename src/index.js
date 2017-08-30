@@ -19,12 +19,12 @@ class Home extends React.Component {
 
   render() {
     var artists = _.map(this.state.artists, (artist) => {
-      return <li key={ artist.slug }>{ artist.name.display }</li>;
+      return <li key={ artist.slug }><a href={ artist.web_url }>{ artist.name.display }</a></li>;
     })
 
     return (
       <div className="App">
-        <h1>Artists</h1>
+        <h1>artists</h1>
         <input ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
         <ul>{ artists }</ul>
       </div>
