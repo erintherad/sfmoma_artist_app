@@ -11,11 +11,5 @@ body {
 
 .card {
   height: 400px;
-  width: 400px;
-  padding: 0px 10px;
-}
-
-.card h4 {
-  width: 200px;
-  margin: 0 auto;
+  width: 255px;
 }
