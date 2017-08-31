@@ -2,10 +2,10 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import './components/visualizations.js';
+import './components/typeComparison.js';
+import './components/countryComparison.js';
+import './components/genderBreakdown.js';
 import './components/artists.js';
-
-// var slugify = require('slugify');
 
 class Home extends React.Component {
   render() {
