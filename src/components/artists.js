@@ -9,15 +9,13 @@ class Artwork extends React.Component {
   constructor() {
     super();
     this.state = {
-      artworks: []
+      artworks: [],
+      resultCount: 0
     };
   }
 
   componentWillMount() {
-    fetch('/api/collection/artworks/')
-      .then(res => res.json())
-      .catch(e => e)
-      .then(artworks => this.setState({ artworks }));
+    this.search();
   }
 
   render() {
@@ -36,14 +34,24 @@ class Artwork extends React.Component {
     })
 
     return (
-      <div className="row">
-        <div className="col-md-12 text-center">
-          <h1>Browse some art</h1>
-          <input ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
+      <div className="row text-center">
+        <div className="col-md-12">
+          <h1>Browse by art type</h1>
+            <input className="form-control text-center search-input" placeholder="Sculpture, drawing, printed material, architectual drawing..." ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
+          <div>{ this.state.resultCount } results</div>
           <div className="card-deck">{ artworks }</div>
         </div>
       </div>
     );
+  }
+
+  //add debounce
+
+  search(type = "photograph") {
+    fetch(`/api/collection/artworks/?has_images=1&type=${type}`)
+      .then(res => res.json())
+      .catch(e => e)
+      .then(res => this.setState({ artworks: res.results, resultCount: res.count }));
   }
 }
 
