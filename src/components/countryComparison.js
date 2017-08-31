@@ -1,70 +1,74 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
-import { VictoryChart,
-         VictoryStack,
-         VictoryArea,
-         VictoryTheme
+import { VictoryBar,
+         VictoryAxis,
+         VictoryLabel,
+         VictoryStack
         } from 'victory';
+
+const dataA = [
+  {x: "Photography", y: 57},
+  {x: "Painting", y: 40},
+  {x: "Architecture", y: 38},
+  {x: "video", y: 37}
+];
+
+const dataB = dataA.map((point) => {
+  const y = Math.round(point.y + 3 * (Math.random() - 0.5));
+  return { ...point, y };
+});
+
+const width = 200;
+const height = 200;
 
 class CountryComparison extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      data: this.getData()
-    };
-  }
-
-  componentDidMount() {
-    this.setStateInterval = window.setInterval(() => {
-      this.setState({ data: this.getData() });
-    }, 4000);
-  }
-
   render() {
-    // Some data on this chart here
-    var chart =
-    <div>
-      <VictoryChart
-        theme={VictoryTheme.material}
-        animate={{ duration: 1000 }}
+    var countryComparison =
+    <svg viewBox={`0 0 200 200`}
+      style={{ width: "100%", height: "auto" }}
+    >
+      <VictoryStack horizontal
+        height={height}
+        width={width}
+        style={{ data: { width: 20 }, labels: { fontSize: 11 } }}
       >
-        <VictoryStack
-          colorScale={"warm"}
-        >
-          {this.state.data.map((data, i) => {
-            return (
-              <VictoryArea
-                key={i}
-                data={data}
-                interpolation={"basis"}
-              />
-            );
-          })}
-        </VictoryStack>
-      </VictoryChart>
-    </div>
+        <VictoryBar
+          style={{ data: { fill: "orange" } }}
+          data={dataA}
+          y={(data) => (-Math.abs(data.y))}
+          labels={(data) => (`${Math.abs(data.y)}%`)}
+        />
+        <VictoryBar
+          style={{ data: { fill: "gold" } }}
+          data={dataB}
+          labels={(data) => (`${Math.abs(data.y)}%`)}
+        />
+      </VictoryStack>
+
+      <VictoryAxis dependentAxis
+        height={height}
+        width={width}
+        style={{
+          axis: { stroke: "transparent" },
+          ticks: { stroke: "transparent" },
+          tickLabels: { fontSize: 8, fill: "black" }
+        }}
+        tickLabelComponent={<VictoryLabel x={100} textAnchor="middle"/>}
+        tickValues={dataA.map((point) => point.x).reverse()}
+      />
+    </svg>
 
     return (
       <div>
-        <h1>Art Stats</h1>
-        { chart }
+        <p>United States vs European Art</p>
+        { countryComparison }
       </div>
     );
   }
 
-  getData() {
-    return _.range(7).map(() => {
-      return [
-        { x: 1, y: _.random(1, 5) },
-        { x: 2, y: _.random(1, 10) },
-        { x: 3, y: _.random(2, 10) },
-        { x: 4, y: _.random(2, 10) },
-        { x: 5, y: _.random(2, 15) }
-      ];
-    });
-  }
+
 }
 
 ReactDOM.render(

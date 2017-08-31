@@ -28,7 +28,7 @@ class GenderBreakdown extends React.Component {
               { x: "27.38% Female", y: this.state.femaleArtistCount },
               { x: "72.62% Male", y: this.state.maleArtistCount }
             ]}
-            innerRadius={68} labelRadius={210}
+            innerRadius={68} labelRadius={100}
             style={{ labels: { fontSize: 20, fill: "black"}}}
             colorScale={["tomato", "orange"]}
             animate={{ duration: 2000 }}
@@ -38,8 +38,8 @@ class GenderBreakdown extends React.Component {
 
     return (
       <div>
-          <h1>Gender Breakdown</h1>
-          { artistGenderBreakdown }
+        <p>Artists in collection</p>
+        { artistGenderBreakdown }
       </div>
     );
   }
