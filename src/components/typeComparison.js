@@ -5,7 +5,8 @@ import { VictoryChart,
          VictoryGroup,
          VictoryPortal,
          VictoryArea,
-         VictoryScatter
+         VictoryScatter,
+         VictoryLabel
         } from 'victory';
 
 class TypeComparison extends React.Component {
@@ -15,25 +16,25 @@ class TypeComparison extends React.Component {
     this.state = {};
   }
 
-  componentWillMount() {
-    fetch(`/api/collection/artworks/?date_display=1900&department=Photography`)
-      .then(res => res.json())
-      .catch(e => e)
-      .then(res => console.log(res.count));
-  }
+  // componentWillMount() {
+  //   fetch(`/api/collection/artworks/?date_display=2000&department=Architecture and Design`)
+  //     .then(res => res.json())
+  //     .catch(e => e)
+  //     .then(res => console.log(res.count));
+  // }
 
   render() {
     // Painting and Sculpture, Photography, Architecture and Design over time
     var stackedMediumOverTime =
       <div>
-        <VictoryChart scale={{x: "time"}} width={400} height={400}>
-          <VictoryStack colorScale="warm">
+        <VictoryChart scale={{x: "time"}} width={400} height={400} animate={{ duration: 2000 }}>
+          <VictoryStack colorScale={["tomato", "orange", "gold"]}>
             <VictoryGroup
               data={[
-                {x: new Date(1986, 1, 1), y: 2},
-                {x: new Date(1996, 1, 1), y: 3},
-                {x: new Date(2006, 1, 1), y: 5},
-                {x: new Date(2016, 1, 1), y: 4}
+                {x: new Date(1900, 0, 1), y: 2},
+                {x: new Date(1925, 0, 1), y: 26},
+                {x: new Date(1975, 0, 1), y: 98},
+                {x: new Date(2000, 0, 1), y: 29}
               ]}
             >
               <VictoryArea/>
@@ -45,10 +46,10 @@ class TypeComparison extends React.Component {
             </VictoryGroup>
             <VictoryGroup
               data={[
-                {x: new Date(1986, 1, 1), y: 4},
-                {x: new Date(1996, 1, 1), y: 3},
-                {x: new Date(2006, 1, 1), y: 2},
-                {x: new Date(2016, 1, 1), y: 5}
+                {x: new Date(1900, 0, 1), y: 6},
+                {x: new Date(1925, 0, 1), y: 6},
+                {x: new Date(1975, 0, 1), y: 61},
+                {x: new Date(2000, 0, 1), y: 211}
               ]}
             >
               <VictoryArea/>
@@ -60,10 +61,10 @@ class TypeComparison extends React.Component {
             </VictoryGroup>
             <VictoryGroup
               data={[
-                {x: new Date(1986, 1, 1), y: 3},
-                {x: new Date(1996, 1, 1), y: 1},
-                {x: new Date(2006, 1, 1), y: 4},
-                {x: new Date(2016, 1, 1), y: 2}
+                {x: new Date(1900, 0, 1), y: 9},
+                {x: new Date(1925, 0, 1), y: 21},
+                {x: new Date(1975, 0, 1), y: 224},
+                {x: new Date(2000, 0, 1), y: 103}
               ]}
             >
               <VictoryArea/>
@@ -79,7 +80,7 @@ class TypeComparison extends React.Component {
 
     return (
       <div>
-        <h1>Art Stats</h1>
+        <p>Photography, Painting, and Architecture created and obtained over the last 20th Century</p>
         { stackedMediumOverTime }
       </div>
     );
