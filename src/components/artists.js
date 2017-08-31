@@ -36,9 +36,9 @@ class Artwork extends React.Component {
     return (
       <div className="row text-center">
         <div className="col-md-12">
-          <h1>Browse by art type</h1>
+          <h1>Browse by type</h1>
             <input className="form-control text-center search-input"
-                   placeholder="Sculpture, drawing, printed material, architectual drawing..."
+                   placeholder="Sculpture, drawing, video, painting..."
                    ref="query"
                    onChange={ (e) => { this.search(this.refs.query.value); } }
                    type="text" />
@@ -52,7 +52,7 @@ class Artwork extends React.Component {
   //add debounce
 
   search(type = "photograph") {
-    fetch(`/api/collection/artworks/?has_images=1&type=${type}`)
+    fetch(`/api/collection/artworks/?page_size=8&has_images=1&type=${type}`)
       .then(res => res.json())
       .catch(e => e)
       .then(res => this.setState({ artworks: res.results, resultCount: res.count }));
