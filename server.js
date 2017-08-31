@@ -13,7 +13,7 @@ app.get('/api/*', function(req, res) {
 
   request(options, function (error, response, body) {
     if (error) { throw error; }
-    res.json(JSON.parse(body).results);
+    res.json(JSON.parse(body));
   });
 });
 
