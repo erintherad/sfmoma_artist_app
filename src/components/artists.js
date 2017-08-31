@@ -37,7 +37,11 @@ class Artwork extends React.Component {
       <div className="row text-center">
         <div className="col-md-12">
           <h1>Browse by art type</h1>
-            <input className="form-control text-center search-input" placeholder="Sculpture, drawing, printed material, architectual drawing..." ref="query" onChange={ (e) => { this.search(this.refs.query.value); } } type="text" />
+            <input className="form-control text-center search-input"
+                   placeholder="Sculpture, drawing, printed material, architectual drawing..."
+                   ref="query"
+                   onChange={ (e) => { this.search(this.refs.query.value); } }
+                   type="text" />
           <div>{ this.state.resultCount } results</div>
           <div className="card-deck">{ artworks }</div>
         </div>
