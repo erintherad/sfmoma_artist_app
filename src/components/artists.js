@@ -14,7 +14,10 @@ class Artwork extends React.Component {
   }
 
   componentWillMount() {
-    this.search();
+    fetch(`/api/collection/artworks/?page=12&page_size=8`)
+      .then(res => res.json())
+      .catch(e => e)
+      .then(artworks => this.setState({ artworks }));
   }
 
   render() {
@@ -41,13 +44,6 @@ class Artwork extends React.Component {
         </div>
       </div>
     );
-  }
-
-  search() {
-    fetch(`/api/collection/artworks/?page_size=8`)
-      .then(res => res.json())
-      .catch(e => e)
-      .then(artworks => this.setState({ artworks }));
   }
 }
 
