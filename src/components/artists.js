@@ -14,7 +14,7 @@ class Artwork extends React.Component {
   }
 
   componentWillMount() {
-    fetch(`/api/collection/artworks/?page=12&page_size=8`)
+    fetch('/api/collection/artworks/')
       .then(res => res.json())
       .catch(e => e)
       .then(artworks => this.setState({ artworks }));

@@ -13,10 +13,17 @@ class Visualization extends React.Component {
 
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      artists: []
+    };
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    fetch(`/api/collection/artists/`)
+      .then(res => res.json())
+      .catch(e => e)
+      .then(artists => this.setState({ artists }));
+  }
 
   render() {
     return (
