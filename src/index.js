@@ -12,7 +12,7 @@ class Home extends React.Component {
     return (
       <div className="row">
         <div className="col-md-12 text-center">
-          <h1>SFMOMA <small>Art and Info</small></h1>
+          <h1>SFMOMA Dashboard</h1>
         </div>
       </div>
     );
