@@ -1,6 +1,6 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryBar } from 'victory';
+import { VictoryPie, VictoryLabel } from 'victory';
 
 const data = [
   {quarter: 1, earnings: 13000},
@@ -14,15 +14,14 @@ class Visualization extends React.Component {
   constructor() {
     super();
     this.state = {
-      artists: []
+      femaleArtistCount: 0,
+      maleArtistCount: 0
     };
   }
 
   componentWillMount() {
-    fetch(`/api/collection/artists/`)
-      .then(res => res.json())
-      .catch(e => e)
-      .then(artists => this.setState({ artists }));
+    this.getArtistCount("female", "femaleArtistCount");
+    this.getArtistCount("male", "maleArtistCount");
   }
 
   render() {
@@ -30,16 +29,32 @@ class Visualization extends React.Component {
       <div className="row">
         <div className="col-md-3 text-center">
           <h1>Art Stats</h1>
-            <VictoryBar
-              data={data}
-              // data accessor for x values
-              x="quarter"
-              // data accessor for y values
-              y="earnings"
-            />
+            <svg viewBox="0 0 400 400">
+              <VictoryPie
+                width={400} height={400}
+                data={[
+                  { x: "Female", y: this.state.femaleArtistCount },
+                  { x: "Male", y: this.state.maleArtistCount }
+                ]}
+                innerRadius={68} labelRadius={100}
+                style={{ labels: { fontSize: 20, fill: "white"}}}
+              />
+              <VictoryLabel
+                textAnchor="middle"
+                x={200} y={200}
+                text="Gender Breakdown"
+              />
+            </svg>
         </div>
       </div>
     );
+  }
+
+  getArtistCount(gender, counter) {
+    fetch(`/api/collection/artists/?gender=${gender}`)
+      .then(res => res.json())
+      .catch(e => e)
+      .then(res => this.setState({ [counter]: res.count }));
   }
 }
 
