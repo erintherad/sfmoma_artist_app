@@ -21,5 +21,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('header')
+  document.getElementById('root')
 )
