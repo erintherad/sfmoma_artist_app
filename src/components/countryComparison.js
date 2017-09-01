@@ -1,6 +1,4 @@
 import React    from 'react';
-import ReactDOM from 'react-dom';
-import _ from 'lodash';
 import { VictoryBar,
          VictoryAxis,
          VictoryLabel,
@@ -22,7 +20,7 @@ const dataB = dataA.map((point) => {
 const width = 200;
 const height = 200;
 
-class CountryComparison extends React.Component {
+export default class CountryComparison extends React.Component {
 
   render() {
     var countryComparison =
@@ -61,17 +59,10 @@ class CountryComparison extends React.Component {
     </svg>
 
     return (
-      <div>
+      <div className="col-md-4">
         <p>United States vs European Art</p>
         { countryComparison }
       </div>
     );
   }
-
-
 }
-
-ReactDOM.render(
-  <CountryComparison />,
-  document.getElementById('countryComparison')
-)
