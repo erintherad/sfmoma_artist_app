@@ -2,7 +2,7 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 
 // Styles
-import './styles/index.css';
+import './styles/css/index.css';
 
 // Components
 import Header from './components/header.js';

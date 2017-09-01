@@ -1,6 +1,6 @@
 import React    from 'react';
 import _ from 'lodash';
-import '../styles/artwork.css';
+import '../styles/css/index.css';
 
 export default class Artwork extends React.Component {
 
