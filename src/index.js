@@ -13,7 +13,7 @@ import CountryComparison from './components/countryComparison.js';
 class App extends React.Component {
   render() {
     return (
-      <div className="row">
+      <div className="row text-center">
         <Header header="SFMOMA Dashboard" />
         <TypeComparison />
         <GenderBreakdown />
