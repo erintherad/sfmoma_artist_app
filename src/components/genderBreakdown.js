@@ -1,8 +1,7 @@
 import React    from 'react';
-import ReactDOM from 'react-dom';
 import { VictoryPie } from 'victory';
 
-class GenderBreakdown extends React.Component {
+export default class GenderBreakdown extends React.Component {
 
   constructor() {
     super();
@@ -37,7 +36,7 @@ class GenderBreakdown extends React.Component {
       </div>
 
     return (
-      <div>
+      <div className="col-md-4">
         <p>Artists in collection</p>
         { artistGenderBreakdown }
       </div>
@@ -51,8 +50,3 @@ class GenderBreakdown extends React.Component {
       .then(res => this.setState({ [counter]: res.count }));
   }
 }
-
-ReactDOM.render(
-  <GenderBreakdown />,
-  document.getElementById('genderBreakdown')
-)
