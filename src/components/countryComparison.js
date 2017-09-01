@@ -36,6 +36,7 @@ export default class CountryComparison extends React.Component {
     <div>
       <VictoryChart height={400} width={400}
         domainPadding={{x: 30, y: 20}}
+        animate={{ duration: 2000 }}
       >
           <VictoryStack
             colorScale={["tomato", "orange", "gold"]}
