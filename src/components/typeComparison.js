@@ -9,7 +9,7 @@ import { VictoryChart,
          VictoryLabel
         } from 'victory';
 
-class TypeComparison extends React.Component {
+export default class TypeComparison extends React.Component {
 
   constructor() {
     super();
@@ -26,7 +26,7 @@ class TypeComparison extends React.Component {
   render() {
     // Painting and Sculpture, Photography, Architecture and Design over time
     var stackedMediumOverTime =
-      <div>
+      <div className="col-md-4">
         <VictoryChart scale={{x: "time"}} width={400} height={400} animate={{ duration: 2000 }}>
           <VictoryStack colorScale={["tomato", "orange", "gold"]}>
             <VictoryGroup
@@ -86,8 +86,3 @@ class TypeComparison extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <TypeComparison />,
-  document.getElementById('typeComparison')
-)
