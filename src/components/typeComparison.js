@@ -1,18 +1,16 @@
 import React    from 'react';
-import ReactDOM from 'react-dom';
 import { VictoryChart,
          VictoryStack,
          VictoryGroup,
          VictoryPortal,
          VictoryArea,
-         VictoryScatter,
-         VictoryLabel
+         VictoryScatter
         } from 'victory';
 
 export default class TypeComparison extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
@@ -26,7 +24,7 @@ export default class TypeComparison extends React.Component {
   render() {
     // Painting and Sculpture, Photography, Architecture and Design over time
     var stackedMediumOverTime =
-      <div className="col-md-4">
+      <div>
         <VictoryChart scale={{x: "time"}} width={400} height={400} animate={{ duration: 2000 }}>
           <VictoryStack colorScale={["tomato", "orange", "gold"]}>
             <VictoryGroup
@@ -79,7 +77,7 @@ export default class TypeComparison extends React.Component {
       </div>
 
     return (
-      <div>
+      <div className="col-md-4">
         <p>Photography, Painting, and Architecture created and obtained over the last 20th Century</p>
         { stackedMediumOverTime }
       </div>
