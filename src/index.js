@@ -1,23 +1,29 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 
-// import './index.css';
+// Styles
+import './styles/index.css';
 
-// import './components/artists.js';
-
+// Components
 import Header from './components/header.js';
 import TypeComparison from './components/typeComparison.js';
 import GenderBreakdown from './components/genderBreakdown.js';
 import CountryComparison from './components/countryComparison.js';
+import Artwork from './components/artwork.js';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="row text-center">
-        <Header header="SFMOMA Dashboard" />
-        <TypeComparison />
-        <GenderBreakdown />
-        <CountryComparison />
+      <div>
+        <div className="row text-center">
+          <Header header="SFMOMA Dashboard" />
+          <TypeComparison />
+          <GenderBreakdown />
+          <CountryComparison />
+        </div>
+        <div className="row text-center">
+          <Artwork />
+        </div>
       </div>
     );
   }

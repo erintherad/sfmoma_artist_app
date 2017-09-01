@@ -1,8 +1,8 @@
 import React    from 'react';
-import ReactDOM from 'react-dom';
 import _ from 'lodash';
+import '../styles/artwork.css';
 
-class Artwork extends React.Component {
+export default class Artwork extends React.Component {
 
   constructor() {
     super();
@@ -32,17 +32,15 @@ class Artwork extends React.Component {
     })
 
     return (
-      <div className="row text-center">
-        <div className="col-md-12">
-          <h1>Browse by type</h1>
-            <input className="form-control text-center search-input"
-                   placeholder="Sculpture, drawing, video, painting..."
-                   ref="query"
-                   onChange={ (e) => { this.search(this.refs.query.value); } }
-                   type="text" />
-          <div>{ this.state.resultCount } results</div>
-          <div className="card-deck">{ artworks }</div>
-        </div>
+      <div className="col-md-12">
+        <h1>Browse by type</h1>
+          <input className="form-control text-center search-input"
+                 placeholder="Sculpture, drawing, video, painting..."
+                 ref="query"
+                 onChange={ (e) => { this.search(this.refs.query.value); } }
+                 type="text" />
+        <div>{ this.state.resultCount } results</div>
+        <div className="card-deck">{ artworks }</div>
       </div>
     );
   }
@@ -56,8 +54,3 @@ class Artwork extends React.Component {
       .then(res => this.setState({ artworks: res.results, resultCount: res.count }));
   }
 }
-
-ReactDOM.render(
-  <Artwork />,
-  document.getElementById('artists')
-)
