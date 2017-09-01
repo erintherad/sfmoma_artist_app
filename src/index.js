@@ -12,7 +12,9 @@ import Header from './components/header.js';
 class App extends React.Component {
   render() {
     return (
-      <Header />
+      <div>
+        <Header header="SFMOMA Dashboard" />
+      </div>
     );
   }
 }
