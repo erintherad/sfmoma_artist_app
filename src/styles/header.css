@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+.header-style {
+  background-color: #757575; }
+  .header-style h1 {
+    font-family: "Oswald", sans-serif;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    color: white;
+    font-size: 4em; }

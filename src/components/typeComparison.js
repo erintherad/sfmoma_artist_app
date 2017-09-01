@@ -6,6 +6,7 @@ import { VictoryChart,
          VictoryArea,
          VictoryScatter
         } from 'victory';
+import '../styles/index.css';
 
 export default class TypeComparison extends React.Component {
 
@@ -70,9 +71,11 @@ export default class TypeComparison extends React.Component {
       </div>
 
     return (
-      <div className="col-md-4">
-        <p>Architecture and Design, Photography, and Painting and Sculpture created time</p>
-        { stackedMediumOverTime }
+      <div className="col-md-4 graph-container-style">
+        <p>Art from the 20th Century</p>
+          <div className="graph-style">
+            { stackedMediumOverTime }
+          </div>
       </div>
     );
   }

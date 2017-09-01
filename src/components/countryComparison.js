@@ -1,5 +1,6 @@
 import React from 'react';
 import { VictoryChart, VictoryStack, VictoryBar, VictoryAxis } from 'victory';
+import '../styles/index.css';
 
 const myDataset = [
   [
@@ -55,9 +56,11 @@ export default class CountryComparison extends React.Component {
     </div>
 
     return (
-      <div className="col-md-4">
+      <div className="col-md-4 graph-container-style">
         <p>United States vs European Art</p>
-        { countryComparison }
+        <div className="graph-style">
+          { countryComparison }
+        </div>
       </div>
     );
   }

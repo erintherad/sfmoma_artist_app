@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+.graph-container-style {
+  background-color: white;
+  margin: 16px;
+  width: 32em;
+  height: 32em;
+  box-shadow: 2px 2px 10px #adadad; }
+  .graph-container-style .graph-style {
+    max-width: 100%;
+    max-height: 100%; }

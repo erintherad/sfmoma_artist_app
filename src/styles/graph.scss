@@ -1,0 +1,15 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+
+.graph-container-style {
+  background-color: white;
+  margin: 16px;
+  width: 32em;
+  height: 32em;
+  box-shadow: 2px 2px 10px $box-shadow-gray;
+
+  .graph-style {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

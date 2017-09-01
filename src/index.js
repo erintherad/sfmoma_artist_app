@@ -2,7 +2,7 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 
 // Styles
-import './styles/css/index.css';
+import './styles/index.css';
 
 // Components
 import Header from './components/header.js';
@@ -17,6 +17,8 @@ class App extends React.Component {
       <div>
         <div className="row text-center">
           <Header header="SFMOMA Dashboard" />
+        </div>
+        <div className="row text-center justify-content-md-center">
           <TypeComparison />
           <GenderBreakdown />
           <CountryComparison />

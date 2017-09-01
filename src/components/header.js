@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/index.css';
 
 export default class Header extends React.Component {
   constructor() {
@@ -10,10 +11,8 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-12 text-center">
-          <h1>{ this.props.header }</h1>
-        </div>
+      <div className="col-md-12 text-center header-style">
+        <h1>{ this.props.header }</h1>
       </div>
     )
   }
