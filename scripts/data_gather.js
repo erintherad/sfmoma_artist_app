@@ -15,13 +15,37 @@
 //   }
 //
 //   runScript() {
-//     fetch(`/api/collection/artworks/?date_display__gte=1975&date_display__lte=2000&department=Photography`)
+//     fetch(`/api/collection/artworks/`)
 //     .then(res => res.json())
 //     .catch(e => e)
-//     .then(res => console.log("75-00: " + res.count));
+//     .then(res => console.log(res.count));
 //     }
 // }
+// countrComparison data
 
+// Photography
+// North America: 4165, 21.6
+// Europe: 638, 3.3
+// total: 19289
+
+// Painting and Sculpture
+// North America: 408, 4.6
+// Europe: 66, .74
+// total: 8881
+
+// Architecture and Design
+// North America: 63, .97
+// Europe: 844, 13
+// total: 6513
+
+// Media Arts
+// North America: 14, 6.2
+// Europe: 0
+// total: 227
+
+
+
+// typeComparison Component Data
 // Architecture and Design
 
 // 1900-1924: 68
