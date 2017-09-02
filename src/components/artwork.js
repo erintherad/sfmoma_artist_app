@@ -32,10 +32,9 @@ export default class Artwork extends React.Component {
     })
 
     return (
-      <div className="col-md-12">
+      <div className="col-md-12 artwork-container">
         <div className="row white-container-style">
           <div className="col-md-12 artwork-input-container">
-            <h3>Browse by type</h3>
               <input className="form-control text-center search-input"
                      placeholder="Sculpture, drawing, video, painting..."
                      ref="query"
