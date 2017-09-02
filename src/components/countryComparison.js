@@ -58,7 +58,7 @@ export default class CountryComparison extends React.Component {
 
     return (
       <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style">
-        <p>United States vs European Art</p>
+        <h3>United States vs European Art</h3>
         <div className="col-lg-12 graph-style">
           { countryComparison }
         </div>
