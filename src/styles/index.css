@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 .white-container-style {
   box-shadow: 2px 2px 10px #adadad;
-  background-color: white; }
+  background-color: white;
+  border-radius: 10px 75px; }
 
-.header-style {
-  background-color: #FF6347; }
-  .header-style h1 {
-    font-family: "Oswald", sans-serif;
-    padding-bottom: 16px;
-    color: white;
-    font-size: 3.5em; }
+.top-header {
+  background-color: #FF6347;
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 16px;
+  color: white;
+  font-size: 3.5em; }
+
+.ribbon-header {
+  background-color: #FF6347;
+  color: white; }
 
 .artwork-container {
   margin-top: 20px; }

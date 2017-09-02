@@ -5,14 +5,15 @@ export default class Header extends React.Component {
   constructor() {
     super();
     this.defaultProps = {
-      header: ""
+      header: "",
+      headerClass: ""
     };
   }
 
   render() {
     return (
-      <div className="col-md-12 text-center header-style">
-        <h1>{ this.props.header }</h1>
+      <div className="col-md-12 text-center">
+        <h1 className={ this.props.headerClass }>{ this.props.header }</h1>
       </div>
     )
   }

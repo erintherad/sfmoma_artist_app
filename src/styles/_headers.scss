@@ -1,11 +1,14 @@
 @import 'colors.scss';
 
-.header-style {
+.top-header {
   background-color: $header-orange;
-  h1 {
-    font-family: $header-font;
-    padding-bottom: 16px;
-    color: white;
-    font-size: 3.5em;
-  }
+  font-family: $header-font;
+  padding-bottom: 16px;
+  color: white;
+  font-size: 3.5em;
+}
+
+.ribbon-header {
+  background-color: $header-orange;
+  color: white;
 }
