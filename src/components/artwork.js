@@ -1,4 +1,4 @@
-import React    from 'react';
+import React from 'react';
 import _ from 'lodash';
 import '../styles/index.css';
 
@@ -32,8 +32,8 @@ export default class Artwork extends React.Component {
     })
 
     return (
-      <div className="col-md-12 artwork-container">
-        <div className="row container-style">
+      <div className="col-md-12">
+        <div className="row white-container-style">
           <div className="col-md-12 artwork-input-container">
             <h1>Browse by type</h1>
               <input className="form-control text-center search-input"

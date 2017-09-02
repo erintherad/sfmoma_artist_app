@@ -1,6 +1,5 @@
 import React    from 'react';
 import { VictoryPie } from 'victory';
-import '../styles/index.css';
 
 export default class GenderBreakdown extends React.Component {
 
@@ -37,11 +36,15 @@ export default class GenderBreakdown extends React.Component {
       </div>
 
     return (
-      <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style container-style">
-        <h3>Artists in collection</h3>
-          <div className="col-lg-12 graph-style">
-            { artistGenderBreakdown }
+      <div className="col-md-4">
+        <div className="graph white-container-style">
+          <h3 className="graph-header">Artists in collection</h3>
+          <div className="row">
+            <div className="graph-img-div">
+              { artistGenderBreakdown }
+            </div>
           </div>
+        </div>
       </div>
     );
   }
