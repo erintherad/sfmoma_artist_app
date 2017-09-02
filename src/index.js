@@ -18,7 +18,7 @@ class App extends React.Component {
         <div className="row text-center">
           <Header header="SFMOMA Dashboard" />
         </div>
-        <div className="row text-center justify-content-md-center">
+        <div className="row text-center">
           <TypeComparison />
           <GenderBreakdown />
           <CountryComparison />

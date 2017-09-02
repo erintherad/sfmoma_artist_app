@@ -23,7 +23,7 @@ export default class GenderBreakdown extends React.Component {
       <div>
         <svg viewBox="0 0 400 400">
           <VictoryPie
-            width={400} height={400}
+            height={400} width={400}
             data={[
               { x: "27.38% Female", y: this.state.femaleArtistCount },
               { x: "72.62% Male", y: this.state.maleArtistCount }
@@ -37,9 +37,9 @@ export default class GenderBreakdown extends React.Component {
       </div>
 
     return (
-      <div className="col-md-4 graph-container-style">
+      <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style">
         <p>Artists in collection</p>
-          <div className="graph-style">
+          <div className="col-lg-12 graph-style">
             { artistGenderBreakdown }
           </div>
       </div>

@@ -31,16 +31,25 @@
 
 .graph-container-style {
   background-color: white;
-  margin: 16px;
-  width: 32em;
-  height: 32em;
-  box-shadow: 2px 2px 10px #adadad; }
-  .graph-container-style .graph-style {
-    max-width: 100%;
-    max-height: 100%; }
+  box-shadow: 2px 2px 10px #adadad;
+  margin: 2em;
+  width: 30%; }
+  @media (max-width: 1690px) {
+    .graph-container-style {
+      margin: 20px 30px;
+      width: 28%; } }
+  @media (max-width: 1200px) {
+    .graph-container-style {
+      margin: 20px 90px;
+      width: 80%; } }
+  @media (max-width: 700px) {
+    .graph-container-style {
+      margin: 20px 0px;
+      width: 100%; } }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family: "Oswald", sans-serif;
-  background-color: #ECECEC; }
+  background-color: #ECECEC;
+  max-width: 100%; }

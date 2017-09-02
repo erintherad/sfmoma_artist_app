@@ -19,7 +19,7 @@ export default class TypeComparison extends React.Component {
     // Architecture and Design, Photography, and Painting and Sculpture over time
     var stackedMediumOverTime =
       <div>
-        <VictoryChart scale={{x: "time"}} width={400} height={400} animate={{ duration: 2000 }}>
+        <VictoryChart scale={{x: "time"}} animate={{ duration: 2000 }} height={400} width={400}>
           <VictoryStack colorScale={["tomato", "orange", "gold"]}>
             <VictoryGroup
               data={[
@@ -71,9 +71,9 @@ export default class TypeComparison extends React.Component {
       </div>
 
     return (
-      <div className="col-md-4 graph-container-style">
+      <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style">
         <p>Art from the 20th Century</p>
-          <div className="graph-style">
+          <div className="col-lg-12 graph-style">
             { stackedMediumOverTime }
           </div>
       </div>

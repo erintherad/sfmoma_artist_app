@@ -35,7 +35,8 @@ export default class CountryComparison extends React.Component {
     const dataset = this.transformData(myDataset);
     const countryComparison =
     <div>
-      <VictoryChart height={400} width={400}
+      <VictoryChart
+        height={400} width={400}
         domainPadding={{x: 30, y: 20}}
         animate={{ duration: 2000 }}
       >
@@ -56,9 +57,9 @@ export default class CountryComparison extends React.Component {
     </div>
 
     return (
-      <div className="col-md-4 graph-container-style">
+      <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style">
         <p>United States vs European Art</p>
-        <div className="graph-style">
+        <div className="col-lg-12 graph-style">
           { countryComparison }
         </div>
       </div>
