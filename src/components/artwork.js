@@ -35,16 +35,16 @@ export default class Artwork extends React.Component {
       <div className="col-md-12">
         <div className="row white-container-style">
           <div className="col-md-12 artwork-input-container">
-            <h1>Browse by type</h1>
+            <h3>Browse by type</h3>
               <input className="form-control text-center search-input"
                      placeholder="Sculpture, drawing, video, painting..."
                      ref="query"
                      onChange={ (e) => { this.search(this.refs.query.value); } }
                      type="text" />
-            <div>{ this.state.resultCount } results</div>
           </div>
           <div className="col-md-12 artwork-results-container">
             <div className="card-deck">{ artworks }</div>
+            <div>{ this.state.resultCount } results</div>
           </div>
         </div>
       </div>

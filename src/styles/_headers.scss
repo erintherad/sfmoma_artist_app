@@ -1,5 +1,7 @@
+@import 'colors.scss';
+
 .header-style {
-  background-color: $header-gray;
+  background-color: $header-orange;
   h1 {
     font-family: $header-font;
     padding-bottom: 16px;

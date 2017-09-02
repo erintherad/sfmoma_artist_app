@@ -14,12 +14,13 @@ class App extends React.Component {
     return (
       <div>
         <div className="row text-center">
-          <Header header="SFMOMA Dashboard" />
+          <Header header="SFMOMA DASHBOARD" />
         </div>
         <div className="text-center">
           <Graphs />
         </div>
-        <div className=" artwork-container text-center">
+        <div className="artwork-container text-center">
+          <Header header="SFMOMA ARTWORK" />
           <Artwork />
         </div>
       </div>
