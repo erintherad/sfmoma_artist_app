@@ -32,15 +32,21 @@ export default class Artwork extends React.Component {
     })
 
     return (
-      <div className="col-md-12">
-        <h1>Browse by type</h1>
-          <input className="form-control text-center search-input"
-                 placeholder="Sculpture, drawing, video, painting..."
-                 ref="query"
-                 onChange={ (e) => { this.search(this.refs.query.value); } }
-                 type="text" />
-        <div>{ this.state.resultCount } results</div>
-        <div className="card-deck">{ artworks }</div>
+      <div className="col-md-12 artwork-container">
+        <div className="row container-style">
+          <div className="col-md-12 artwork-input-container">
+            <h1>Browse by type</h1>
+              <input className="form-control text-center search-input"
+                     placeholder="Sculpture, drawing, video, painting..."
+                     ref="query"
+                     onChange={ (e) => { this.search(this.refs.query.value); } }
+                     type="text" />
+            <div>{ this.state.resultCount } results</div>
+          </div>
+          <div className="col-md-12 artwork-results-container">
+            <div className="card-deck">{ artworks }</div>
+          </div>
+        </div>
       </div>
     );
   }

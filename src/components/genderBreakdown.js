@@ -37,7 +37,7 @@ export default class GenderBreakdown extends React.Component {
       </div>
 
     return (
-      <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style">
+      <div className="col-lg-4 col-md-4 col-xs-4 graph-container-style container-style">
         <h3>Artists in collection</h3>
           <div className="col-lg-12 graph-style">
             { artistGenderBreakdown }

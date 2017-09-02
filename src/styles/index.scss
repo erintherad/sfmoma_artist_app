@@ -1,8 +1,11 @@
+// Global styles //
 @import 'colors.scss';
 @import 'fonts.scss';
+@import 'containers.scss';
+@import 'headers.scss';
 
+// Component styles //
 @import 'artwork.scss';
-@import 'header.scss';
 @import 'graph.scss';
 
 body {
