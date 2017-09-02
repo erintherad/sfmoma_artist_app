@@ -19,7 +19,7 @@ class App extends React.Component {
         <div className="text-center">
           <Graphs />
         </div>
-        <div className="row text-center">
+        <div className=" artwork-container text-center">
           <Artwork />
         </div>
       </div>

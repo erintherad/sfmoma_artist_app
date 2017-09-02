@@ -1,17 +1,16 @@
-.search-input {
-  width: 50%;
-  margin: 0 auto; }
-
-.card-deck {
-  padding-top: 40px; }
-
-.card-img-top {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  max-height: 250px;
-  margin-bottom: 1rem; }
-
-.card {
-  height: 400px;
-  width: 255px; }
+.artwork-container {
+  margin-top: 20px; }
+  .artwork-container .search-input {
+    width: 50%;
+    margin: 0 auto; }
+  .artwork-container .card-deck {
+    padding-top: 40px; }
+  .artwork-container .card-img-top {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    max-height: 250px;
+    margin-bottom: 1rem; }
+  .artwork-container .card {
+    height: 400px;
+    width: 255px; }
