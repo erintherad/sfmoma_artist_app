@@ -14,6 +14,7 @@ export default class Artwork extends React.Component {
       previousPage: "",
       type: ""
     };
+    this.debouncedSearch = _.debounce(this.searchByType, 500).bind(this);
   }
 
   componentWillMount() {
@@ -42,7 +43,7 @@ export default class Artwork extends React.Component {
             <input className="form-control text-center search-input"
                      placeholder="Search by keyword: clay, paint, video..."
                      ref="query"
-                     onChange={ (e) => { this.searchByType(this.refs.query.value); } }
+                     onChange={ this.debouncedSearch }
                      type="text" />
                    <div className="results-div">{ this.state.resultCount } results for <span className="orange">{ this.showResults(this.state.type) }</span></div>
           </div>
@@ -66,9 +67,15 @@ export default class Artwork extends React.Component {
     this.search(event.target.href);
   }
 
-  searchByType(type = "photo") {
-    this.setState({ type: type });
-    this.search(`/api/collection/artworks/?page_size=8&has_images=1&object_keywords__icontains=${type}`);
+  searchByType() {
+    var query;
+    if (this.refs.query) {
+      query = this.refs.query.value;
+    } else {
+      query = "photo";
+    }
+    this.setState({ type: query });
+    this.search(`/api/collection/artworks/?page_size=8&has_images=1&object_keywords__icontains=${query}`);
   }
 
   search(url) {
