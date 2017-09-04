@@ -52,9 +52,13 @@ export default class Artwork extends React.Component {
           </div>
           <div>
             <Pager>
-              <Pager.Item href={ this.state.previousPage } disabled={ this.state.previousPage === '' } onClick={ this.pagerOnClick.bind(this) }>Previous</Pager.Item>
+              <Pager.Item href={ this.state.previousPage }
+                          disabled={ this.state.previousPage === '' }
+                          onClick={ this.pagerOnClick.bind(this) }>Previous</Pager.Item>
               {' '}
-              <Pager.Item href={ this.state.nextPage } disabled={ this.state.nextPage === '' } onClick={ this.pagerOnClick.bind(this) }>Next</Pager.Item>
+              <Pager.Item href={ this.state.nextPage }
+                          disabled={ this.state.nextPage === '' }
+                          onClick={ this.pagerOnClick.bind(this) }>Next</Pager.Item>
             </Pager>
           </div>
         </div>
