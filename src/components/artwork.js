@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import '../styles/index.css';
+import { Pager } from 'react-bootstrap';
 
 export default class Artwork extends React.Component {
 
@@ -9,12 +10,14 @@ export default class Artwork extends React.Component {
     this.state = {
       artworks: [],
       resultCount: 0,
+      nextPage: "",
+      previousPage: "",
       type: ""
     };
   }
 
   componentWillMount() {
-    this.search();
+    this.searchByType();
   }
 
   render() {
@@ -39,26 +42,47 @@ export default class Artwork extends React.Component {
             <input className="form-control text-center search-input"
                      placeholder="Search by keyword: clay, paint, video..."
                      ref="query"
-                     onChange={ (e) => { this.search(this.refs.query.value); } }
+                     onChange={ (e) => { this.searchByType(this.refs.query.value); } }
                      type="text" />
                    <div className="results-div">{ this.state.resultCount } results for <span className="orange">{ this.showResults(this.state.type) }</span></div>
           </div>
           <div className="col-md-12 artwork-results-container">
             <div className="card-deck">{ artworks }</div>
           </div>
+          <div>
+            <Pager>
+              <Pager.Item href={ this.state.previousPage } disabled={ this.state.previousPage == '' } onClick={ this.pagerOnClick.bind(this) }>Previous</Pager.Item>
+              {' '}
+              <Pager.Item href={ this.state.nextPage } disabled={ this.state.nextPage == '' } onClick={ this.pagerOnClick.bind(this) }>Next</Pager.Item>
+            </Pager>
+          </div>
         </div>
       </div>
     );
   }
 
-  search(type = "photo") {
-    fetch(`/api/collection/artworks/?page_size=8&has_images=1&object_keywords__icontains=${type}`)
+  pagerOnClick(event) {
+    event.preventDefault();
+    this.search(event.target.href);
+  }
+
+  searchByType(type = "photo") {
+    this.setState({ type: type });
+    this.search(`/api/collection/artworks/?page_size=8&has_images=1&object_keywords__icontains=${type}`);
+  }
+
+  search(url) {
+    fetch(url)
       .then(res => res.json())
       .catch(e => e)
-      .then(res => this.setState({ artworks: res.results, resultCount: res.count, type: `${type}` }));
+      .then(res => this.setState({
+        artworks: res.results,
+        resultCount: res.count,
+        nextPage: (res.next || "").replace('https://www.sfmoma.org', ''),
+        previousPage: (res.previous || "").replace('https://www.sfmoma.org', '') }));
   }
 
   showResults(type) {
-    return type ? this.state.type : "all";
+    return type ? type : "all";
   }
 }
