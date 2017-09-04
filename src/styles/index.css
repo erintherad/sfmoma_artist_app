@@ -65,10 +65,12 @@
     margin-top: 3em;
     z-index: 2; }
     .artwork-container .artwork-input-container .search-input {
-      width: 20%;
+      width: 30%;
+      height: 100%;
       margin: 0 auto;
+      font-size: 2em;
       background: none;
-      border-bottom: solid 2px #FF6347;
+      border-bottom: solid 4px #FF6347;
       border-top: none;
       border-right: none;
       border-left: none;
@@ -131,3 +133,6 @@ body {
   font-family: "Oswald", sans-serif;
   background-color: #ECECEC;
   max-width: 100%; }
+
+.orange {
+  color: #FF6347; }

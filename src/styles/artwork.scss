@@ -9,10 +9,12 @@
     z-index: 2;
 
     .search-input {
-      width: 20%;
+      width: 30%;
+      height: 100%;
       margin: 0 auto;
+      font-size: 2em;
       background: none;
-      border-bottom: solid 2px $header-orange;
+      border-bottom: solid 4px $header-orange;
       border-top: none;
       border-right: none;
       border-left: none;
