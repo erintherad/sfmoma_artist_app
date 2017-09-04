@@ -41,7 +41,7 @@ export default class Artwork extends React.Component {
                      ref="query"
                      onChange={ (e) => { this.search(this.refs.query.value); } }
                      type="text" />
-                   <div className="results-div">{ this.state.resultCount } <span className="orange">{ this.showResults(this.state.type) }</span> results</div>
+                   <div className="results-div">{ this.state.resultCount } results for <span className="orange">{ this.showResults(this.state.type) }</span></div>
           </div>
           <div className="col-md-12 artwork-results-container">
             <div className="card-deck">{ artworks }</div>
@@ -59,6 +59,6 @@ export default class Artwork extends React.Component {
   }
 
   showResults(type) {
-    return type ? this.state.type : "total";
+    return type ? this.state.type : "all";
   }
 }
