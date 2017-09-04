@@ -12,7 +12,7 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <div className="col-md-12 text-center">
+      <div className="col-md-12 text-center header-div">
         <h1 className={ this.props.headerClass }>{ this.props.header }</h1>
       </div>
     )

@@ -35,22 +35,20 @@ export default class Artwork extends React.Component {
       <div className="col-md-12 artwork-container">
         <div className="row white-container-style">
           <div className="col-md-12 artwork-input-container">
-              <input className="form-control text-center search-input"
-                     placeholder="Sculpture, drawing, video, painting..."
+            <input className="form-control text-center search-input"
+                     placeholder="Search by sculpture, drawing, video, painting..."
                      ref="query"
                      onChange={ (e) => { this.search(this.refs.query.value); } }
                      type="text" />
+             <div className="results-div">{ this.state.resultCount } results</div>
           </div>
           <div className="col-md-12 artwork-results-container">
             <div className="card-deck">{ artworks }</div>
-            <div>{ this.state.resultCount } results</div>
           </div>
         </div>
       </div>
     );
   }
-
-  //add debounce
 
   search(type = "photograph") {
     fetch(`/api/collection/artworks/?page_size=8&has_images=1&type=${type}`)

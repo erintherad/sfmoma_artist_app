@@ -1,28 +1,65 @@
-.search-input {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.card-deck {
-  padding-top: 40px;
-}
-
-.card-img-top {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  max-height: 250px;
-  margin-bottom: 1rem;
-}
-
-.card {
-  height: 400px;
-  width: 255px;
-}
+@import 'colors.scss';
 
 .artwork-container {
   position: relative;
-  bottom: 5em;
-  z-index: -10;
+  bottom: 7em;
+
+  .artwork-input-container {
+    margin-top: 3em;
+    z-index: 2;
+
+    .search-input {
+      width: 20%;
+      margin: 0 auto;
+      background: none;
+      border-bottom: solid 2px $header-orange;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      box-shadow: none;
+      border-radius: 0;
+      transition: border 0.3s;
+
+      input[type="text"] {
+        color: $header-orange;
+        &:focus {
+          border-bottom: solid 2px $header-orange;
+        }
+
+        &::-webkit-input-placeholder { color: $header-orange; }  /* WebKit, Blink, Edge */
+        &:-moz-placeholder { color: $header-orange; }  /* Mozilla Firefox 4 to 18 */
+        &::-moz-placeholder { color: $header-orange; }  /* Mozilla Firefox 19+ */
+        &:-ms-input-placeholder { color: $header-orange; }  /* Internet Explorer 10-11 */
+        &::-ms-input-placeholder { color: $header-orange; }  /* Microsoft Edge */
+        &:focus {
+          border: none;
+        }
+      }
+    }
+
+    .results-div {
+      margin: 15px 0px 20px 0px;
+    }
+  }
+
+  .artwork-results-container {
+    z-index: 10;
+
+    .card-deck {
+      padding-top: 40px;
+    }
+
+    .card-img-top {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      max-height: 250px;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      height: 400px;
+      width: 255px;
+    }
+  }
 }

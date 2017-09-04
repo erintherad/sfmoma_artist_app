@@ -1,5 +1,9 @@
 @import 'colors.scss';
 
+.header-div {
+  z-index: 1;
+}
+
 .top-header {
   background-color: $header-orange;
   font-family: $header-font;
@@ -9,7 +13,7 @@
 }
 
 .ribbon-header {
- font-size: 16px !important;
+ font-size: 24px !important;
 
  width: 50%;
 
@@ -17,7 +21,7 @@
  background: $header-gold;
  color: #fff;
  text-align: center;
- padding: 1.5em 2em;
+ padding: 1.1em 2em;
  margin: 2em auto 3em;
 }
 .ribbon-header:before, .ribbon-header:after {
