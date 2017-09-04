@@ -76,10 +76,10 @@ export default class Artwork extends React.Component {
     if (this.refs.query) {
       query = this.refs.query.value;
     } else {
-      query = "photo";
+      query = "photograph";
     }
     this.setState({ type: query });
-    this.search(`/api/collection/artworks/?page_size=8&has_images=1&object_keywords__icontains=${query}`);
+    this.search(`/api/collection/artworks/?page_size=8&has_images=1&object_keywords__iregex=\\y${query}(s|es)*\\y`);
   }
 
   search(url) {
