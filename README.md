@@ -35,7 +35,7 @@ You can run this application by the following set of instructions:
 
 ## Technologies
 
-* React with Webpack for compiling
-* Sass/Bootstrap for styling
+* [React with Webpack](https://facebook.github.io/react/) for compiling
+* [Sass](http://sass-lang.com/)/[Bootstrap](https://react-bootstrap.github.io/) for styling
 * [Formidable Victory Library](https://formidable.com/open-source/victory/) for data visualization
-* Node/Express back-end for routing
+* [Node](https://nodejs.org/en/)/[Express](https://expressjs.com/) back-end for routing
