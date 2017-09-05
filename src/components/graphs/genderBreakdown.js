@@ -50,15 +50,6 @@ export default class GenderBreakdown extends React.Component {
   }
 
   getArtistCount(gender, counter) {
-    function getFemalePercentage(femaleCount, maleCount) {
-      this.setState({ femalePercentage: Math.round((femaleCount/maleCount)*100) });
-    }
-
-    function getMalePercentage(femaleCount, maleCount) {
-      var count = Math.round((femaleCount/maleCount)*100);
-      this.setState({ maleCount: (100 - count) });
-    }
-
     fetch(`/api/collection/artists/?gender=${gender}`)
       .then(res => res.json())
       .catch(e => e)
