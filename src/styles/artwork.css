@@ -75,6 +75,8 @@
           opacity: 0.5; }
   .artwork-container .pager li.disabled a {
     color: gray; }
+    .artwork-container .pager li.disabled a:hover {
+      background-color: transparent; }
   .artwork-container .pager li > a {
     background-color: transparent;
     border: 0;

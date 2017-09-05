@@ -98,6 +98,10 @@
 
   .pager li.disabled a {
     color: gray;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 
   .pager li>a {
