@@ -33,9 +33,9 @@ export default class Artwork extends React.Component {
                         <h4 className="card-title">{ artwork.title.display }</h4>
                       </div>
                       <div className="card-content">
-                        <h3 className="card-text">{ artwork.artists[0].artist.name_display }</h3>
+                        <h4 className="card-text">{ artwork.artists[0].artist.name_display }</h4>
                         <p className="card-text"><span className="orange">Type:</span> { artwork.type }, { artwork.date.display }</p>
-                        <p className="card-text"><span className="orange">Keywords:</span> { artwork.object_keywords }</p>
+                        <p className="card-text keyword-overflow"><span className="orange">Keywords:</span> { artwork.object_keywords }</p>
                       </div>
                     </a>
                   </div>
