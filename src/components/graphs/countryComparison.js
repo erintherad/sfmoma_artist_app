@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryChart, VictoryStack, VictoryBar, VictoryAxis } from 'victory';
+import { VictoryChart, VictoryStack, VictoryBar, VictoryAxis, VictoryLegend, VictoryContainer } from 'victory';
 
 const myDataset = [
   [
@@ -39,19 +39,28 @@ export default class CountryComparison extends React.Component {
         domainPadding={{x: 30, y: 20}}
         animate={{ duration: 2000 }}
       >
-          <VictoryStack
-            colorScale={["tomato", "orange", "gold"]}
-          >
-            {dataset.map((data, i) => {
-              return <VictoryBar data={data} key={i}/>;
-            })}
-          </VictoryStack>
-          <VictoryAxis dependentAxis
-            tickFormat={(tick) => `${tick}%`}
-          />
-          <VictoryAxis
-            tickFormat={["Photography", "Architecture", "Painting", "Media Arts"]}
-          />
+        <VictoryContainer><VictoryLegend
+          data={[
+          {name: 'United States', symbol: { type: 'square'}},
+          {name: 'Europe', symbol: { type: 'square'}}
+          ]}
+          orientation="horizontal"
+          colorScale={["tomato", "orange"]}
+          padding={{left:100, top: 40}}
+        /></VictoryContainer>
+        <VictoryStack
+          colorScale={["tomato", "orange"]}
+        >
+          {dataset.map((data, i) => {
+            return <VictoryBar data={data} key={i}/>;
+          })}
+        </VictoryStack>
+        <VictoryAxis dependentAxis
+          tickFormat={(tick) => `${tick}%`}
+        />
+        <VictoryAxis
+          tickFormat={["Photography", "Architecture", "Painting", "Media Arts"]}
+        />
       </VictoryChart>
     </div>
 
