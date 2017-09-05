@@ -4,7 +4,8 @@ import { VictoryChart,
          VictoryGroup,
          VictoryPortal,
          VictoryArea,
-         VictoryScatter
+         VictoryScatter,
+         VictoryLabel
         } from 'victory';
 
 export default class TypeComparison extends React.Component {
@@ -28,7 +29,10 @@ export default class TypeComparison extends React.Component {
                 {x: new Date(2000, 0, 1), y: 3448}
               ]}
             >
-              <VictoryArea/>
+              <VictoryArea
+                labels={ ["Painting and Sculpture"] }
+                labelComponent={<VictoryPortal><VictoryLabel dx={265} dy={5}/></VictoryPortal>}
+                />
               <VictoryPortal>
                 <VictoryScatter
                   style={{ data: {fill: "black"}}}
@@ -43,8 +47,11 @@ export default class TypeComparison extends React.Component {
                 {x: new Date(2000, 0, 1), y: 2971}
               ]}
             >
-              <VictoryArea/>
-             <VictoryPortal>
+              <VictoryArea
+                labels={ ["Photography"] }
+                labelComponent={<VictoryPortal><VictoryLabel dx={180} dy={-15}/></VictoryPortal>}
+                />
+              <VictoryPortal>
                 <VictoryScatter
                   style={{ data: {fill: "black"}}}
                 />
@@ -58,7 +65,10 @@ export default class TypeComparison extends React.Component {
                 {x: new Date(2000, 0, 1), y: 5116}
               ]}
             >
-              <VictoryArea/>
+              <VictoryArea
+                labels={ ["Architecture and Design"] }
+                labelComponent={<VictoryPortal><VictoryLabel dx={140} dy={-75}/></VictoryPortal>}
+                />
               <VictoryPortal>
                 <VictoryScatter
                   style={{ data: {fill: "black"}}}
