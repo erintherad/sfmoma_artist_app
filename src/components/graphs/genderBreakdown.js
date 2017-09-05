@@ -24,8 +24,8 @@ export default class GenderBreakdown extends React.Component {
           <VictoryPie
             height={400} width={400}
             data={[
-              { x: "27.38% Female", y: this.state.femaleArtistCount },
-              { x: "72.62% Male", y: this.state.maleArtistCount }
+              { x: '27% Female', y: this.state.femaleArtistCount },
+              { x: '73% Male', y: this.state.maleArtistCount }
             ]}
             innerRadius={68} labelRadius={100}
             style={{ labels: { fontSize: 20, fill: "black"}}}
@@ -38,7 +38,7 @@ export default class GenderBreakdown extends React.Component {
     return (
       <div className="col-md-4">
         <div className="graph white-container-style">
-          <h3 className="graph-header">Artists in collection</h3>
+          <h3 className="graph-header">Artists</h3>
           <div className="row">
             <div className="graph-img-div">
               { artistGenderBreakdown }
@@ -50,6 +50,15 @@ export default class GenderBreakdown extends React.Component {
   }
 
   getArtistCount(gender, counter) {
+    function getFemalePercentage(femaleCount, maleCount) {
+      this.setState({ femalePercentage: Math.round((femaleCount/maleCount)*100) });
+    }
+
+    function getMalePercentage(femaleCount, maleCount) {
+      var count = Math.round((femaleCount/maleCount)*100);
+      this.setState({ maleCount: (100 - count) });
+    }
+
     fetch(`/api/collection/artists/?gender=${gender}`)
       .then(res => res.json())
       .catch(e => e)
