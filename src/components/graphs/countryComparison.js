@@ -45,8 +45,9 @@ export default class CountryComparison extends React.Component {
           {name: 'Europe', symbol: { type: 'square'}}
           ]}
           orientation="horizontal"
+          gutter={0}
           colorScale={["tomato", "orange"]}
-          padding={{left:100, top: 40}}
+          padding={{left:110, top: 20}}
         /></VictoryContainer>
         <VictoryStack
           colorScale={["tomato", "orange"]}

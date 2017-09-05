@@ -1,5 +1,5 @@
 import React    from 'react';
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryTooltip } from 'victory';
 
 export default class GenderBreakdown extends React.Component {
 
@@ -20,19 +20,26 @@ export default class GenderBreakdown extends React.Component {
     // Sets up gender breakdown graph
     var artistGenderBreakdown =
       <div>
-        <svg viewBox="0 0 400 400">
-          <VictoryPie
-            height={400} width={400}
-            data={[
-              { x: '27% Female', y: this.state.femaleArtistCount },
-              { x: '73% Male', y: this.state.maleArtistCount }
-            ]}
-            innerRadius={68} labelRadius={100}
-            style={{ labels: { fontSize: 20, fill: "black"}}}
-            colorScale={["tomato", "orange"]}
-            animate={{ duration: 2000 }}
-          />
-        </svg>
+        <VictoryPie
+          innerRadius={100}
+          labelRadius={120}
+          colorScale={["tomato", "orange"]}
+          style={{ labels: { fill: "white" } }}
+          labels={(d) => d.y}
+          labelComponent={<VictoryTooltip
+            x={200} y={250}
+            orientation="top"
+            pointerLength={0}
+            cornerRadius={50}
+            width={100}
+            height={100}
+            flyoutStyle={{ fill: "black" }}
+            />}
+          data={[
+            { x: 'Female', y: this.state.femaleArtistCount, label: '27% Women'},
+            { x: 'Male', y: this.state.maleArtistCount, label: '73% Men' }
+          ]}
+        />
       </div>
 
     return (
