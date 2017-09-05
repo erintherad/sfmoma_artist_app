@@ -41,13 +41,12 @@ export default class CountryComparison extends React.Component {
       >
         <VictoryContainer><VictoryLegend
           data={[
-          {name: 'United States', symbol: { type: 'square'}},
+          {name: 'US', symbol: { type: 'square'}},
           {name: 'Europe', symbol: { type: 'square'}}
           ]}
-          orientation="horizontal"
-          gutter={0}
+          gutter={5}
           colorScale={["tomato", "orange"]}
-          padding={{left:110, top: 20}}
+          padding={{left:60, top: 20}}
         /></VictoryContainer>
         <VictoryStack
           colorScale={["tomato", "orange"]}
