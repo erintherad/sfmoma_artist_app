@@ -137,6 +137,17 @@
           padding: 20px; }
         .artwork-container .artwork-results-container .card-deck .card:hover {
           opacity: 0.5; }
+  .artwork-container .pager li.disabled a {
+    color: gray; }
+  .artwork-container .pager li > a {
+    background-color: transparent;
+    border: 0;
+    border-radius: none;
+    font-size: 2em;
+    color: #FF6347; }
+    .artwork-container .pager li > a:focus {
+      outline: none;
+      outline-offset: none; }
 
 .graph {
   padding: 0px 10px;

@@ -58,7 +58,7 @@
         a {
           color: black;
           text-decoration: none;
-          
+
           &:focus {
             outline: none;
           }
@@ -93,6 +93,23 @@
           opacity: 0.5;
         }
       }
+    }
+  }
+
+  .pager li.disabled a {
+    color: gray;
+  }
+
+  .pager li>a {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    border-radius: none;
+    font-size: 2em;
+    color: $header-orange;
+
+    &:focus {
+      outline: none;
+      outline-offset: none;
     }
   }
 }
