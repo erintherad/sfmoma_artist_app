@@ -27,8 +27,10 @@ export default class Artwork extends React.Component {
       return <div className="col-md-3" key={ artwork.slug }>
                 <div className="card">
                   <div className="card-block">
-                    <img className="card-img-top" src={ imgUrl } alt="" />
-                    <h4 className="card-title">{ artwork.title.display }</h4>
+                    <a href={ artwork.web_url } target="_blank">
+                      <img className="card-img-top" src={ imgUrl } alt="" />
+                      <h4 className="card-title">{ artwork.title.display }</h4>
+                    </a>
                     <p className="card-text">{ artwork.artists[0].artist.name_display }</p>
                     <p className="card-text">{ artwork.type }, { artwork.date.display }</p>
                     <p className="card-text">{ artwork.object_keywords }</p>
