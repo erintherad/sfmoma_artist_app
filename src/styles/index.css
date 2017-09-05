@@ -27,6 +27,11 @@
   text-align: center;
   padding: 1.1em 2em;
   margin: 2em auto 3em; }
+  @media (max-width: 575px) {
+    .ribbon-header {
+      width: 250px;
+      margin: 2em auto 1em;
+      padding: 1.1em 1em; } }
 
 .ribbon-header:before, .ribbon-header:after {
   content: "";
@@ -83,6 +88,10 @@
       box-shadow: none;
       border-radius: 0;
       transition: border 0.3s; }
+      @media (max-width: 575px) {
+        .artwork-container .artwork-input-container .search-input {
+          width: 70%;
+          margin-top: 80px; } }
       .artwork-container .artwork-input-container .search-input input[type="text"] {
         color: #FF6347;
         /* WebKit, Blink, Edge */

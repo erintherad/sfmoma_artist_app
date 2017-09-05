@@ -19,6 +19,10 @@
       box-shadow: none;
       border-radius: 0;
       transition: border 0.3s; }
+      @media (max-width: 575px) {
+        .artwork-container .artwork-input-container .search-input {
+          width: 70%;
+          margin-top: 80px; } }
       .artwork-container .artwork-input-container .search-input input[type="text"] {
         color: #FF6347;
         /* WebKit, Blink, Edge */

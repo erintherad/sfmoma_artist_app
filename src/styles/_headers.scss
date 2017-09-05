@@ -16,6 +16,12 @@
  font-size: 24px !important;
  width: 50%;
 
+ @media (max-width: 575px) {
+   width: 250px;
+   margin: 2em auto 1em;
+    padding: 1.1em 1em;
+ }
+
  position: relative;
  background: $header-gold;
  color: #fff;
