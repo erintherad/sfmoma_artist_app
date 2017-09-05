@@ -6,6 +6,8 @@ This interactive dashboard calls the SFMOMA API to retrieve and show various art
 
 The dashboard contains a series of graphs that call and return data based from the artwork and artists of the SFMOMA collection.
 
+### Graphs
+
 ![graphs](./public/graphs.png)
 
 * The first graph showcases the amount of collected art that was created in the last century.  Photography, Painting & Sculpture, and Architecture & Design are all accumulated on the graph throughout time. Users can hover over each section to understand which collected art relates to each portion.
@@ -13,6 +15,8 @@ The dashboard contains a series of graphs that call and return data based from t
 * The second graph showcases the artist gender breakdown from the collection.  Users can hover over each piece of the graph in order to see the specific breakdown.
 
 * The third graph shows a percentage breakdown of the collected art based by country: United States vs Europe.
+
+### Artwork Query
 
 ![artwork](./public/artwork.png)
 
