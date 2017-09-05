@@ -52,4 +52,5 @@
       margin-bottom: 1rem; }
     .artwork-container .artwork-results-container .card {
       height: 400px;
-      width: 255px; }
+      width: 255px;
+      margin: 0 auto; }

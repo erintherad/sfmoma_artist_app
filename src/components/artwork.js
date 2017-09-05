@@ -49,9 +49,9 @@ export default class Artwork extends React.Component {
                    <div className="results-div">{ this.state.resultCount } results for <span className="orange">{ this.showResults(this.state.type) }</span></div>
           </div>
           <div className="col-md-12 artwork-results-container">
-            <div className="card-deck">{ artworks }</div>
+            <div className="card-deck row">{ artworks }</div>
           </div>
-          <div>
+          <div className="col-md-12">
             <Pager>
               <Pager.Item href={ this.state.previousPage }
                           disabled={ this.state.previousPage === '' }
