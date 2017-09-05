@@ -2,9 +2,7 @@
 
 ## Description
 
-This interactive dashboard calls the SFMOMA API to retrieve and show various artwork and statistics from the museum's collection.
-
-The dashboard contains a series of graphs that call and return data based from the artwork and artists of the SFMOMA collection.
+This interactive dashboard calls the SFMOMA API to retrieve and show various artwork and statistics from the museum's collection. The dashboard contains a series of graphs that call and return data based from the artwork and artists of the SFMOMA collection. It was created with minimal and clean material design. The site is also fully responsive for mobile viewing.
 
 ### Graphs
 
@@ -21,8 +19,6 @@ The dashboard contains a series of graphs that call and return data based from t
 ![artwork](./public/artwork.png)
 
 Users can also search for artwork based on keyword. A list of results will dynamically appear along with relevant high-level information about each piece.  Users can browse throughout the results and they may click on each piece to forward them back to the SFMOMA website which contains additional information about each piece.
-
-This dashboard was created with minimal and clean material design aspect in  mind. The site is also fully responsive for mobile viewing.
 
 ## How to run this app
 
