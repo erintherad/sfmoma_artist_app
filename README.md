@@ -26,6 +26,6 @@ You can run this application by the following set of instructions:
 ## Technologies
 
 * React with Webpack for compiling
-* Sass/Bootstrap for styling
+* Sass/Bootstrap for styling and full responsiveness of app
 * [Formidable Victory Library](https://formidable.com/open-source/victory/) for data visualization
 * Node/Express back-end for routing
