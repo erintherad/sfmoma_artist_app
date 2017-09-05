@@ -3,9 +3,7 @@ import { VictoryChart,
          VictoryStack,
          VictoryGroup,
          VictoryPortal,
-         VictoryArea,
-         VictoryScatter,
-         VictoryLabel
+         VictoryArea
         } from 'victory';
 
 export default class TypeComparison extends React.Component {
@@ -30,13 +28,51 @@ export default class TypeComparison extends React.Component {
               ]}
             >
               <VictoryArea
-                labels={ ["Painting and Sculpture"] }
-                labelComponent={<VictoryPortal><VictoryLabel dx={265} dy={5}/></VictoryPortal>}
-                />
+                events={[{
+                  target: "parent",
+                  eventHandlers: {
+                    onMouseOver: () => {
+                      return [
+                        {
+                          target: "data",
+                          eventKey: "all",
+                          mutation: (props) => {
+                            const fill = props.style && props.style.fill;
+                            return fill === "black" ? null : { style: { fill: "gold" } };
+                          }
+                        }, {
+                          target: "labels",
+                          eventKey: 2,
+                          mutation: (props) => {
+                            return props.text === "Architecture and Design" ?
+                              { text: " " } : { text: "Architecture and Design", dx:-70, dy:30 }
+                          }
+                        }
+                      ];
+                    },
+                    onMouseLeave: () => {
+                      return [
+                        {
+                          target: "data",
+                          eventKey: "all",
+                          mutation: (props) => {
+                            const fill = props.style && props.style.fill;
+                            return fill === "white" ? null : { style: { fill: "tomato" } };
+                          }
+                        }, {
+                          target: "labels",
+                          eventKey: 2,
+                          mutation: (props) => {
+                            return props.text === " " ?
+                              { text: "Architecture and Design" } : { text: " " }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }]}
+              />
               <VictoryPortal>
-                <VictoryScatter
-                  style={{ data: {fill: "black"}}}
-                />
               </VictoryPortal>
             </VictoryGroup>
             <VictoryGroup
@@ -48,13 +84,51 @@ export default class TypeComparison extends React.Component {
               ]}
             >
               <VictoryArea
-                labels={ ["Photography"] }
-                labelComponent={<VictoryPortal><VictoryLabel dx={180} dy={-15}/></VictoryPortal>}
-                />
+                events={[{
+                  target: "parent",
+                  eventHandlers: {
+                    onMouseOver: () => {
+                      return [
+                        {
+                          target: "data",
+                          eventKey: "all",
+                          mutation: (props) => {
+                            const fill = props.style && props.style.fill;
+                            return fill === "black" ? null : { style: { fill: "yellow" } };
+                          }
+                        }, {
+                          target: "labels",
+                          eventKey: 2,
+                          mutation: (props) => {
+                            return props.text === "Photography" ?
+                              { text: " " } : { text: "Photography", dx:-70, dy:70 }
+                          }
+                        }
+                      ];
+                    },
+                    onMouseLeave: () => {
+                      return [
+                        {
+                          target: "data",
+                          eventKey: "all",
+                          mutation: (props) => {
+                            const fill = props.style && props.style.fill;
+                            return fill === "white" ? null : { style: { fill: "orange" } };
+                          }
+                        }, {
+                          target: "labels",
+                          eventKey: 2,
+                          mutation: (props) => {
+                            return props.text === " " ?
+                              { text: "Photography" } : { text: " " }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }]}
+              />
               <VictoryPortal>
-                <VictoryScatter
-                  style={{ data: {fill: "black"}}}
-                />
               </VictoryPortal>
             </VictoryGroup>
             <VictoryGroup
@@ -66,13 +140,51 @@ export default class TypeComparison extends React.Component {
               ]}
             >
               <VictoryArea
-                labels={ ["Architecture and Design"] }
-                labelComponent={<VictoryPortal><VictoryLabel dx={140} dy={-75}/></VictoryPortal>}
-                />
+                events={[{
+                  target: "parent",
+                  eventHandlers: {
+                    onMouseOver: () => {
+                      return [
+                        {
+                          target: "data",
+                          eventKey: "all",
+                          mutation: (props) => {
+                            const fill = props.style && props.style.fill;
+                            return fill === "black" ? null : { style: { fill: "tomato" } };
+                          }
+                        }, {
+                          target: "labels",
+                          eventKey: 2,
+                          mutation: (props) => {
+                            return props.text === "Painting and Sculpture" ?
+                              { text: " " } : { text: "Painting and Sculpture", dx:-70, dy:80 }
+                          }
+                        }
+                      ];
+                    },
+                    onMouseLeave: () => {
+                      return [
+                        {
+                          target: "data",
+                          eventKey: "all",
+                          mutation: (props) => {
+                            const fill = props.style && props.style.fill;
+                            return fill === "black" ? null : { style: { fill: "gold" } };
+                          }
+                        }, {
+                          target: "labels",
+                          eventKey: 2,
+                          mutation: (props) => {
+                            return props.text === " " ?
+                              { text: "Painting and Sculpture" } : { text: " " }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }]}
+              />
               <VictoryPortal>
-                <VictoryScatter
-                  style={{ data: {fill: "black"}}}
-                />
               </VictoryPortal>
             </VictoryGroup>
           </VictoryStack>
@@ -82,7 +194,7 @@ export default class TypeComparison extends React.Component {
     return (
       <div className="col-md-4">
         <div className="graph white-container-style">
-          <h3 className="graph-header">Art from the 20th Century</h3>
+          <h3 className="graph-header">Items collected from the 20th Century</h3>
           <div className="row">
             <div className="graph-img-div">
               { stackedMediumOverTime }
