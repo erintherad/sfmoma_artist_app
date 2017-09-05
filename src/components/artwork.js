@@ -25,15 +25,19 @@ export default class Artwork extends React.Component {
     var artworks = _.map(this.state.artworks, (artwork) => {
       var imgUrl = artwork.images[0] ? artwork.images[0].public_image : 'placeholder.jpg'
       return <div className="col-md-3" key={ artwork.slug }>
-                <div className="card">
+                <div className="card container-style">
                   <div className="card-block">
                     <a href={ artwork.web_url } target="_blank">
-                      <img className="card-img-top" src={ imgUrl } alt="" />
-                      <h4 className="card-title">{ artwork.title.display }</h4>
+                      <div className="card-img-content">
+                        <img className="card-img-top" src={ imgUrl } alt="" />
+                        <h4 className="card-title">{ artwork.title.display }</h4>
+                      </div>
+                      <div className="card-content">
+                        <h3 className="card-text">{ artwork.artists[0].artist.name_display }</h3>
+                        <p className="card-text"><span className="orange">Type:</span> { artwork.type }, { artwork.date.display }</p>
+                        <p className="card-text"><span className="orange">Keywords:</span> { artwork.object_keywords }</p>
+                      </div>
                     </a>
-                    <p className="card-text">{ artwork.artists[0].artist.name_display }</p>
-                    <p className="card-text">{ artwork.type }, { artwork.date.display }</p>
-                    <p className="card-text">{ artwork.object_keywords }</p>
                   </div>
                 </div>
               </div>;
@@ -41,14 +45,14 @@ export default class Artwork extends React.Component {
 
     return (
       <div className="col-md-12 artwork-container">
-        <div className="row white-container-style">
+        <div className="row">
           <div className="col-md-12 artwork-input-container">
             <input className="form-control text-center search-input"
                      placeholder="Search by keyword: clay, paint, video..."
                      ref="query"
                      onChange={ this.debouncedSearch }
                      type="text" />
-                   <div className="results-div">{ this.state.resultCount } results for <span className="orange">{ this.showResults(this.state.type) }</span></div>
+                   <div className="text-center results-div">{ this.state.resultCount } results for <span className="orange">{ this.showResults(this.state.type) }</span></div>
           </div>
           <div className="col-md-12 artwork-results-container">
             <div className="card-deck row">{ artworks }</div>

@@ -19,7 +19,7 @@ class App extends React.Component {
         <div className="text-center">
           <Graphs />
         </div>
-        <div className="text-center ribbon-div">
+        <div className="ribbon-div">
           <Header headerClass="ribbon-header" header="SFMOMA ARTWORK" />
           <Artwork />
         </div>
