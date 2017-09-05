@@ -54,7 +54,8 @@
           .artwork-container .artwork-results-container .card-deck .card a:focus {
             outline: none; }
         .artwork-container .artwork-results-container .card-deck .card .card-img-content {
-          height: 12em; }
+          height: 12em;
+          position: relative; }
           .artwork-container .artwork-results-container .card-deck .card .card-img-content .card-img-top {
             object-fit: none;
             object-position: center;
@@ -63,12 +64,14 @@
             margin-bottom: 1rem;
             opacity: 1.0; }
           .artwork-container .artwork-results-container .card-deck .card .card-img-content .card-title {
-            position: relative;
-            bottom: 4em;
+            position: absolute;
+            bottom: -7px;
             color: #FFA500;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px 10px;
-            margin: 0 auto; }
+            margin: 0 auto;
+            padding: 15px 15px;
+            width: 100%; }
         .artwork-container .artwork-results-container .card-deck .card .card-content {
           padding: 20px; }
         .artwork-container .artwork-results-container .card-deck .card:hover {

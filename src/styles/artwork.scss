@@ -66,6 +66,7 @@
 
         .card-img-content {
           height: 12em;
+          position: relative;
 
           .card-img-top {
             object-fit: none;
@@ -76,12 +77,14 @@
             opacity: 1.0;
           }
           .card-title {
-            position: relative;
-            bottom: 4em;
+            position: absolute;
+            bottom: -7px;
             color: $header-gold;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px 10px;
             margin: 0 auto;
+            padding: 15px 15px;
+            width: 100%;
           }
         }
 
@@ -98,7 +101,7 @@
 
   .pager li.disabled a {
     color: gray;
-    
+
     &:hover {
       background-color: rgba(0, 0, 0, 0);
     }
