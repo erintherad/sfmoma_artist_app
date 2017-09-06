@@ -45,7 +45,7 @@ export default class TypeComparison extends React.Component {
                           eventKey: 2,
                           mutation: (props) => {
                             return props.text === "Architecture and Design" ?
-                              { text: " " } : { text: "Architecture and Design", dx:-70, dy:30 }
+                              { text: " " } : { text: "📐 Architecture and Design", dx:0, dy:0 }
                           }
                         }
                       ];
@@ -101,7 +101,7 @@ export default class TypeComparison extends React.Component {
                           eventKey: 2,
                           mutation: (props) => {
                             return props.text === "Photography" ?
-                              { text: " " } : { text: "Photography", dx:-70, dy:70 }
+                              { text: " " } : { text: "📸 Photography", dx:-70, dy:70 }
                           }
                         }
                       ];
@@ -157,7 +157,7 @@ export default class TypeComparison extends React.Component {
                           eventKey: 2,
                           mutation: (props) => {
                             return props.text === "Painting and Sculpture" ?
-                              { text: " " } : { text: "Painting and Sculpture", dx:-70, dy:80 }
+                              { text: " " } : { text: "🎨 Painting and Sculpture", dx:-70, dy:80 }
                           }
                         }
                       ];
