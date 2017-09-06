@@ -8,7 +8,6 @@
 
 # production
 /build
-Procfile
 
 # misc
 .DS_Store
