@@ -3,11 +3,13 @@ var app = express();
 var router = express.Router();
 var request = require('request');
 
+require('dotenv').config();
+
 app.get('/api/*', function(req, res) {
   var options = {
     url: 'https://www.sfmoma.org' + req.url,
     headers: {
-      'Authorization': 'Token 53a64b5ecfc68a27eef8668d33322a09897f1bfe'
+      'Authorization': process.env.API_KEYS
     }
   };
 
